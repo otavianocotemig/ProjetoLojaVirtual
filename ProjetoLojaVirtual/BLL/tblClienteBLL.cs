@@ -36,7 +36,7 @@ namespace ProjetoLojaVirtual.BLL
             }
             else
             {
-                return "";
+                return null;
             }
         }
 

@@ -44,5 +44,26 @@ namespace ProjetoLojaVirtual
                 MessageBox.Show("Erro: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+
+                dtoCliente.Email_cliente = txtEmail.Text;
+                if (bllcliente.RecuperarSenha(txtEmail.Text) != null)
+                {
+                    MessageBox.Show("Sua senha é: " + bllcliente.RecuperarSenha(txtEmail.Text), "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erro: Cliente não Localizado.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
